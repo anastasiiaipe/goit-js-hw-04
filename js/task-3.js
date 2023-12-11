@@ -4,7 +4,20 @@ const profile = {
   username: "Jacob",
   playTime: 300,
   changeUsername(newName) {
-    for (const name of this.username) {
-    }
+    this.username = newName;
+  },
+  updatePlayTime(hours) {
+    this.playTime += hours;
+  },
+  getInfo() {
+    return `${this.username} has ${this.playTime} active hours!`;
   },
 };
+
+console.log(profile.getInfo());
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo());
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo());
